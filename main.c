@@ -102,10 +102,10 @@ int main (int argc, char *argv[])
 }
 
 int build_lines_array(){
-  char BUFFER[INPUT_LENGTH+1];
+  char BUFFER[INPUT_LENGTH];
   int rows_count;
   printf("Enter number of lines. Then enter\n");
-  fgets (BUFFER,INPUT_LENGTH+1,stdin);
+  fgets (BUFFER,INPUT_LENGTH,stdin);
   if(sscanf (BUFFER,"%d",&rows_count)<1)
     {
       printf ("ERROR: Bus number sould be positive integer \n");
@@ -120,8 +120,8 @@ int build_lines_array(){
   int line_number,duration,distance;
   for (int i = 0; i < rows_count; ++i)
     {
-      printf ("Insert line info (<line number>,<duration>,<distance>)\t : ");
-      fgets (BUFFER, INPUT_LENGTH+1, stdin);
+      printf ("Enter line info. Then enter\n: ");
+      fgets (BUFFER, INPUT_LENGTH, stdin);
       int ans  =sscanf (BUFFER, "%d,%d,%d", &line_number, &duration, &distance);
       if (ans != 3)
         {
