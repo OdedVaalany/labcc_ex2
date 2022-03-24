@@ -140,7 +140,7 @@ int build_lines_array(){
       else
         {
           --i;
-//          fprintf (stdout,"ERROR: invalid inputs, should be integers <line number 1-999>,<distance 0-1000>,<duration 10-100>\n");
+          fprintf (stdout,"ERROR: invalid inputs, should be integers <line number 1-999>,<distance 0-1000>,<duration 10-100>\n");
         }
     }
   return EXIT_SUCCESS;
