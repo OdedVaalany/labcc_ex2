@@ -124,7 +124,7 @@ int build_lines_array(){
   int line_number,duration,distance;
   for (int i = 0; i < rows_count; ++i)
     {
-      printf ("Enter line info. Then enter\n: ");
+      printf ("Enter line info. Then enter\n ");
       fgets (buffer, INPUT_LENGTH, stdin);
       int ans  =sscanf (buffer, "%d,%d,%d", &line_number, &distance, &duration);
       if (ans != 3)
