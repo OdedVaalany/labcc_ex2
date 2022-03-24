@@ -1,16 +1,33 @@
 #include "test_bus_lines.h"
 #include <string.h>
-//TODO add implementation here
+#include <stdlib.h>
+#include <stdio.h>
 
 int is_row_equal(BusLine *item1, BusLine *item2);
 
 int is_sorted_by_distance (BusLine *start, BusLine *end)
 {
+  bubble_sort(start,end);
+  for (int i = 0;  i< end-start ; ++i)
+    {
+      if((start+i)->distance > (start+i+1)->distance)
+        {
+          return 0;
+        }
+    }
   return 1;
 }
 
 int is_sorted_by_duration (BusLine *start, BusLine *end)
 {
+  quick_sort(start,end);
+  for (int i = 0;  i< end-start ; ++i)
+    {
+      if((start+i)->duration > (start+i+1)->duration)
+      {
+          return 0;
+      }
+    }
   return 1;
 }
 
@@ -20,16 +37,18 @@ int is_equal (BusLine *start_sorted,
 {
   if(end_sorted-start_sorted != end_original - start_original)
     {
-      return 1;
+      printf("fucked");
+      return 0;
     }
   int flag;
-  for (int i = 0; (start_original+i) < end_original ; ++i)
+  for (int i = 0; (start_original+i) <= end_original ; ++i)
     {
       flag=0;
-      for (int j = 0; (start_sorted+j) < end_sorted ; ++j)
+      for (int j = 0; (start_sorted+j) <= end_sorted ; ++j)
         {
           if(is_row_equal ((start_original+i),(start_sorted+j)))
             {
+              flag=1;
               break;
             }
         }
