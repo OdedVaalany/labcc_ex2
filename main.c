@@ -103,14 +103,18 @@ int main (int argc, char *argv[])
 
 int build_lines_array(){
   char buffer[INPUT_LENGTH];
-  int rows_count;
-  printf("Enter number of lines. Then enter\n");
-  fgets (buffer,INPUT_LENGTH,stdin);
-  if(sscanf (buffer,"%d",&rows_count)<1)
+  int rows_count=0;
+  do
     {
-      printf ("ERROR: Bus number sould be positive integer \n");
-      return EXIT_FAILURE;
+      fprintf(stdout,"Enter number of lines. Then enter\n");
+      fgets (buffer,INPUT_LENGTH,stdin);
+      if(sscanf (buffer,"%d",&rows_count)<1)
+        {
+          printf ("ERROR: Bus number sould be positive integer \n");
+          return EXIT_FAILURE;
+        }
     }
+  while (rows_count<=0);
   head = malloc (rows_count * sizeof(BusLine));
   if(head == NULL)
     {
@@ -126,7 +130,7 @@ int build_lines_array(){
       if (ans != 3)
         {
           --i;
-          printf ("ERROR: you need to pass 3 argument\n");
+          fprintf (stdout,"ERROR: you need to pass 3 argument\n");
         }
       else if(valid_duration (duration) && valid_distance (distance) && valid_line_number (line_number))
         {
@@ -137,7 +141,7 @@ int build_lines_array(){
       else
         {
           --i;
-          printf ("ERROR: invalid inputs, should be integers <line number 1-999>,<duration 10-100>,<distance 1-1000>\n");
+          fprintf (stdout,"ERROR: invalid inputs, should be integers <line number 1-999>,<duration 10-100>,<distance 1-1000>\n");
         }
     }
   return EXIT_SUCCESS;
@@ -155,7 +159,7 @@ int valid_duration(int duration)
 
 int valid_distance(int distance)
 {
-  return distance >= 1 && distance <= 1000;
+  return distance >= 0 && distance <= 1000;
 }
 
 void print_array()
@@ -163,7 +167,7 @@ void print_array()
   int rows = (tail- head);
   for (int i = 0; i <= rows; ++i)
     {
-      printf ("%d,%d,%d\n",(head+i)->line_number,(head+i)->duration,(head+i)->distance);
+      fprintf (stdout,"%d,%d,%d\n",(head+i)->line_number,(head+i)->duration,(head+i)->distance);
     }
 }
 
