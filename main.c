@@ -124,7 +124,7 @@ int build_lines_array(){
   int line_number,duration,distance;
   for (int i = 0; i < rows_count; ++i)
     {
-      printf ("Enter line info. Then enter\n ");
+      printf ("Enter line info. Then enter\n");
       fgets (buffer, INPUT_LENGTH, stdin);
       int ans  =sscanf (buffer, "%d,%d,%d", &line_number, &distance, &duration);
       if (ans != 3)
@@ -141,7 +141,7 @@ int build_lines_array(){
       else
         {
           --i;
-          fprintf (stdout,"ERROR: invalid inputs, should be integers <line number 1-999>,<duration 10-100>,<distance 1-1000>\n");
+          fprintf (stdout,"ERROR: invalid inputs, should be integers <line number 1-999>,<distance 1-999>,<duration 10-100>\n");
         }
     }
   return EXIT_SUCCESS;
