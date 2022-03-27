@@ -180,6 +180,7 @@ int tests()
   memcpy(copy,head,(tail-head+1)*sizeof(BusLine));
 
   //TEST NO 1
+  bubble_sort (head,tail);
   if(is_sorted_by_duration (head,tail)==0)
     {
       fprintf (stdout,"TEST 1 FAILED: testing the array is sorted by distance\n");
@@ -201,6 +202,7 @@ int tests()
     }
 
   //TEST NO 3
+  bubble_sort(head,tail);
   if(is_sorted_by_distance(head,tail)==0)
     {
       fprintf (stdout,"TEST 3 FAILED: testing the array is sorted by duration\n");

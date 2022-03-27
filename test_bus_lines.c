@@ -7,7 +7,6 @@ int is_row_equal(BusLine *item1, BusLine *item2);
 
 int is_sorted_by_distance (BusLine *start, BusLine *end)
 {
-  bubble_sort(start,end);
   for (int i = 0;  i< end-start ; ++i)
     {
       if((start+i)->distance > (start+i+1)->distance)
@@ -20,7 +19,6 @@ int is_sorted_by_distance (BusLine *start, BusLine *end)
 
 int is_sorted_by_duration (BusLine *start, BusLine *end)
 {
-  quick_sort(start,end);
   for (int i = 0;  i< end-start ; ++i)
     {
       if((start+i)->duration > (start+i+1)->duration)
