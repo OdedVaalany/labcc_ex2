@@ -6,7 +6,7 @@ void bubble_sort (BusLine *start, BusLine *end)
   BusLine temp;
   for (int i = 0; i < array_size ; ++i)
     {
-      for (int j = 0; j < array_size - i - 1; ++j)
+      for (int j = 0; j < array_size - i; ++j)
         {
           if ((start + j)->distance > (start + j + 1)->distance)
             {

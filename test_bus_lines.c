@@ -1,13 +1,12 @@
 #include "test_bus_lines.h"
-#include <stdio.h>
 
 int is_row_equal (BusLine *item1, BusLine *item2);
 
 int is_sorted_by_distance (BusLine *start, BusLine *end)
 {
-  for (int i = 0; i < end - start; ++i)
+  for (int i = 0; i < end - start - 1; ++i)
     {
-      if ((start + i)->distance > (start + i)->distance)
+      if ((start + i)->distance > (start + i + 1)->distance)
         {
           return 0;
         }
@@ -17,9 +16,9 @@ int is_sorted_by_distance (BusLine *start, BusLine *end)
 
 int is_sorted_by_duration (BusLine *start, BusLine *end)
 {
-  for (int i = 0; i < end - start; ++i)
+  for (int i = 0; i < end - start - 1; ++i)
     {
-      if ((start + i)->duration > (start + i)->duration)
+      if ((start + i + 1)->duration > (start + i)->duration)
         {
           return 0;
         }
