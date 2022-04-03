@@ -5,6 +5,12 @@
 #include <stdlib.h>
 
 #define INPUT_LENGTH 60
+#define MAX_VALID_BUS_NUMBER 999
+#define MIN_VALID_BUS_NUMBER 1
+#define MAX_VALID_DURATION 100
+#define MIN_VALID_DURATION 10
+#define MAX_VALID_DISTANCE 1000
+#define MIN_VALID_DISTANCE 0
 
 int build_lines_array ();
 
@@ -140,7 +146,8 @@ int build_lines_array ()
       else
         {
           --i;
-          printf("ERROR: invalid inputs, should be integers <line number 1-999>,<distance 0-1000>,<duration 10-100>\n");
+          printf("ERROR: invalid inputs, should be integers "
+                 "<line number 1-999>,<distance 0-1000>,<duration 10-100>\n");
         }
     }
   return EXIT_SUCCESS;
@@ -148,17 +155,17 @@ int build_lines_array ()
 
 int valid_line_number (int line_number)
 {
-  return line_number >= 1 && line_number <= 999;
+  return line_number >= MIN_VALID_BUS_NUMBER && line_number <= MAX_VALID_BUS_NUMBER;
 }
 
 int valid_duration (int duration)
 {
-  return duration >= 10 && duration <= 100;
+  return duration >= MIN_VALID_DURATION && duration <= MAX_VALID_DURATION;
 }
 
 int valid_distance (int distance)
 {
-  return distance >= 0 && distance <= 1000;
+  return distance >= MIN_VALID_DISTANCE && distance <= MAX_VALID_DISTANCE;
 }
 
 void print_array ()
