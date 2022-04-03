@@ -40,7 +40,8 @@ int is_equal (BusLine *start_sorted,
       flag = 0;
       for (int j = 0; j< end_sorted-start_sorted; ++j)
         {
-          if (is_row_equal ((start_original + i), (start_sorted + j)))
+          if (is_row_equal ((start_original + i),
+                            (start_sorted + j)))
             {
               flag = 1;
               break;

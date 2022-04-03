@@ -94,12 +94,14 @@ int main (int argc, char *argv[])
         }
       else
         {
-          fprintf (stdout, "USAGE: you can choose only [test,bubble,quick] mode.\n");
+          fprintf (stdout, "USAGE: you can choose "
+                           "only [test,bubble,quick] mode.\n");
         }
     }
   else
     {
-      fprintf (stdout, "USAGE: The program take 1 arg form [bubble,quick,test] mode.\n");
+      fprintf (stdout, "USAGE: The program take 1 arg"
+                       " form [bubble,quick,test] mode.\n");
       return EXIT_FAILURE;
     }
   free (head);
@@ -131,13 +133,15 @@ int build_lines_array ()
     {
       printf ("Enter line info. Then enter\n");
       fgets (buffer, INPUT_LENGTH, stdin);
-      int ans = sscanf (buffer, "%d,%d,%d", &line_number, &distance, &duration);
+      int ans = sscanf (buffer, "%d,%d,%d", &line_number,
+                        &distance, &duration);
       if (ans != 3)
         {
           --i;
           fprintf (stdout, "ERROR: you need to pass 3 argument\n");
         }
-      else if (valid_duration (duration) && valid_distance (distance) && valid_line_number (line_number))
+      else if (valid_duration (duration) && valid_distance (distance) &&
+               valid_line_number (line_number))
         {
           (head + i)->line_number = line_number;
           (head + i)->duration = duration;
@@ -146,8 +150,8 @@ int build_lines_array ()
       else
         {
           --i;
-          printf("ERROR: invalid inputs, should be integers "
-                 "<line number 1-999>,<distance 0-1000>,<duration 10-100>\n");
+          printf ("ERROR: invalid inputs, should be integers "
+                  "<line number 1-999>,<distance 0-1000>,<duration 10-100>\n");
         }
     }
   return EXIT_SUCCESS;
@@ -155,7 +159,8 @@ int build_lines_array ()
 
 int valid_line_number (int line_number)
 {
-  return line_number >= MIN_VALID_BUS_NUMBER && line_number <= MAX_VALID_BUS_NUMBER;
+  return line_number >= MIN_VALID_BUS_NUMBER
+         && line_number <= MAX_VALID_BUS_NUMBER;
 }
 
 int valid_duration (int duration)
@@ -190,39 +195,49 @@ int tests ()
   quick_sort (head, tail);
   if (is_sorted_by_duration (head, tail) == 0)
     {
-      fprintf (stdout, "TEST 1 FAILED: testing the array is sorted by distance\n");
+      fprintf (stdout, "TEST 1 FAILED: testing the array "
+                       "is sorted by distance\n");
     }
   else
     {
-      fprintf (stdout, "TEST 1 PASSED: testing the array is sorted by distance\n");
+      fprintf (stdout, "TEST 1 PASSED: testing the "
+                       "array is sorted by distance\n");
     }
   //TEST NO 2
-  if (is_equal (head, tail, copy, (copy + (tail - head))) == 0)
+  if (is_equal (head, tail,
+                copy, (copy + (tail - head))) == 0)
     {
-      fprintf (stdout, "TEST 2 FAILED: testing the array have the same items after sorting\n");
+      fprintf (stdout, "TEST 2 FAILED: testing the "
+                       "array have the same items after sorting\n");
     }
   else
     {
-      fprintf (stdout, "TEST 2 PASSED: testing the array have the same items after sorting\n");
+      fprintf (stdout, "TEST 2 PASSED: testing the "
+                       "array have the same items after sorting\n");
     }
   //TEST NO 3
   bubble_sort (head, tail);
   if (is_sorted_by_distance (head, tail) == 0)
     {
-      fprintf (stdout, "TEST 3 FAILED: testing the array is sorted by duration\n");
+      fprintf (stdout, "TEST 3 FAILED: testing "
+                       "the array is sorted by duration\n");
     }
   else
     {
-      fprintf (stdout, "TEST 3 PASSED: testing the array is sorted by duration\n");
+      fprintf (stdout, "TEST 3 PASSED: testing "
+                       "the array is sorted by duration\n");
     }
   //TEST NO 4
-  if (is_equal (head, tail, copy, (copy + (tail - head))) == 0)
+  if (is_equal (head, tail,
+                copy, (copy + (tail - head))) == 0)
     {
-      fprintf (stdout, "TEST 4 FAILED: testing the array have the same items after sorting\n");
+      fprintf (stdout, "TEST 4 FAILED: testing "
+                       "the array have the same items after sorting\n");
     }
   else
     {
-      fprintf (stdout, "TEST 4 PASSED: testing the array have the same items after sorting\n");
+      fprintf (stdout, "TEST 4 PASSED: testing "
+                       "the array have the same items after sorting\n");
     }
   free (copy);
   return EXIT_SUCCESS;
