@@ -50,10 +50,9 @@ BusLine *head, *tail;
 
 /**
  * @brief The program have 3 stages:\n
- *          test mode - this mode allow you to run some testes over the inputs.\n
- *          bubble mode - this mode allow you to sort the list of bus by durations\n
- *          quick mode - this mode allow you to sort the list of bus by distance\n
- *
+ * test mode - this mode allow you to run some testes over the inputs.\n
+ * bubble mode - this mode allow you to sort the list of bus by durations\n
+ * quick mode - this mode allow you to sort the list of bus by distance\n
  */
 int main (int argc, char *argv[])
 {
