@@ -20,7 +20,7 @@ int is_sorted_by_duration (BusLine *start, BusLine *end);
  * @brief This function test if the given array equal (by values) to the sorted arrays
  * @param start_sorted pointer to the head of the BusLine array after sorting
  * @param end_sorted pointer to the tail of the BusLine array after sorting
- * * @param start_original pointer to the head of the BusLine array before sorting
+ * @param start_original pointer to the head of the BusLine array before sorting
  * @param end_original pointer to the tail of the BusLine array before sorting
  */
 int is_equal (BusLine *start_sorted,

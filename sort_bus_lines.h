@@ -23,6 +23,7 @@ void bubble_sort (BusLine *start, BusLine *end);
  * @brief This function get a BusLine array and sort by quick sort algo it by the duration fields
  * @param start pointer to the head of the BusLine array for soring
  * @param end pointer to the tail of the BusLine array for soring
+ *
  */
 void quick_sort (BusLine *start, BusLine *end);
 
@@ -30,6 +31,7 @@ void quick_sort (BusLine *start, BusLine *end);
  * @brief A helper function for the quick sort algo
  * @param start pointer to the head of the BusLine array for soring
  * @param end pointer to the tail of the BusLine array for soring
+ * @return the cell that already in his place
  */
 BusLine *partition (BusLine *start, BusLine *end);
 // write only between #define EX2_REPO_SORTBUSLINES_H and #endif //EX2_REPO_SORTBUSLINES_H
