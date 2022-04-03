@@ -173,7 +173,8 @@ void print_array ()
   int rows = (tail - head);
   for (int i = 0; i < rows; ++i)
     {
-      fprintf (stdout, "%d,%d,%d\n", (head + i)->line_number, (head + i)->distance, (head + i)->duration);
+      fprintf (stdout, "%d,%d,%d\n", (head + i)->line_number,
+               (head + i)->distance, (head + i)->duration);
     }
 }
 
